@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/home_bg"
+    tools:context=".accessAccount">
+
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="ACCOUNT NUMBER"
+        android:textColor="#064774"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/home_bg"
+                android:orientation="vertical"
+                >
+
+
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="30sp"
+                    android:background="@drawable/dashboard_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/header">
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/main_acc_tile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/acc_btns"
+                            android:clickable="true"
+                            android:onClick="checkAccount"
+                            android:focusable="true"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:id="@+id/account_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="MAIN ACCOUNT"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/main_account_balance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="R0.00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/savings_acc_tile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/main_acc_tile"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/acc_btns"
+                            android:clickable="true"
+                            android:onClick="checkAccount"
+                            android:focusable="true"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:id="@+id/savings_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SAVINGS ACCOUNT"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/savings_account_balance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="R0.00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/random_account_tile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/savings_acc_tile"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/acc_btns"
+                            android:clickable="true"
+                            android:onClick="checkAccount"
+                            android:focusable="true"
+                            android:padding="20dp">
+
+                            <TextView
+                                android:id="@+id/random_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="RANDOM ACCOUNT"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/random_account_balance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="R0.00"
+                                android:textColor="#FFFFFF"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </RelativeLayout>
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/home_bg"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+                    <TextView
+                        android:id="@+id/quickAccess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Quick Access"
+                        android:textSize="17sp"
+                        android:textColor="#064774"
+                        android:paddingStart="20dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="8dp"
+                        android:layout_marginTop="10dp"
+                        tools:ignore="RtlSymmetry" />
+
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/dashboard_bg"
+                        android:columnCount="2"
+                        android:paddingEnd="5dp"
+                        android:paddingStart="5dp"
+                        android:paddingBottom="5dp"
+                        android:rowCount="3"
+                        android:layout_below="@id/quickAccess">
+
+                        <!-- Item 1: Row 0, Column 0 -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="fill"
+                            android:layout_margin="5dp">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:drawableTop="@drawable/pay_ben"
+                                android:background="@drawable/dashboard_btn_bg"
+                                android:textColor="#000000"
+                                android:drawableTint="#000000"
+                                android:padding="20dp"
+                                android:onClick="payBen"
+                                android:text="PAY BENEFICIAL" />
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Item 2: Row 0, Column 1 -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_margin="5dp">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:drawableTop="@drawable/icon_transfer"
+                                android:background="@drawable/dashboard_btn_bg"
+                                android:textColor="#000000"
+                                android:drawableTint="#000000"
+                                android:padding="20dp"
+                                android:clickable="true"
+                                android:onClick="getTransferFundsActivity"
+                                android:text="TRANSFER MONEY" />
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Item 3: Row 1, Column 0 -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_margin="5dp">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:drawableTop="@drawable/icon_buyprepaid"
+                                android:background="@drawable/dashboard_btn_bg"
+                                android:textColor="#000000"
+                                android:drawableTint="#000000"
+                                android:padding="20dp"
+                                android:onClick="buyPrepaid"
+                                android:text="BUY PREPAID" />
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Item 4: Row 1, Column 1 -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_gravity="fill"
+                            android:layout_margin="5dp">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:drawableTop="@drawable/icon_electric"
+                                android:background="@drawable/dashboard_btn_bg"
+                                android:textColor="#000000"
+                                android:drawableTint="#000000"
+                                android:padding="20dp"
+                                android:onClick="buyElectric"
+                                android:text="BUY ELECTRICITY" />
+                        </androidx.cardview.widget.CardView>
+
+                    </GridLayout>
+
+
+
+                    </RelativeLayout>
+
+
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
+    <!--============================== NAVBAR DESIGN ===========================-->
+
+    <RelativeLayout
+        android:id="@+id/btnBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:focusable="true">
+
+
+
+             <Button
+                 android:id="@+id/home_btn"
+                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                 android:layout_width="75dp"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentStart="true"
+                 android:layout_marginStart="10dp"
+                 android:layout_marginTop="0dp"
+                 android:padding="15dp"
+                 android:onClick="homeBtn"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toStartOf="@id/cards_btn"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toTopOf="parent"
+                 app:icon="@drawable/icon_home"
+                 app:iconSize="40dp"
+                 app:iconTint="#0033FF"
+                 app:strokeColor="#FFFFFF"
+                 app:strokeWidth="2dp"
+                 tools:ignore="RtlSymmetry" />
+
+            <Button
+                android:id="@+id/cards_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:paddingStart="15dp"
+                android:onClick="cardBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/transact_btn"
+                app:layout_constraintStart_toEndOf="@id/home_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_cards"
+                app:iconSize="40dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/transact_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/cards_btn"
+                android:paddingStart="15dp"
+                android:onClick="transactBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/msg_btn"
+                app:layout_constraintStart_toEndOf="@id/cards_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_transact"
+                app:iconSize="55dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/msg_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/transact_btn"
+                android:paddingStart="15dp"
+                android:onClick="msgBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/more_btn"
+                app:layout_constraintStart_toEndOf="@id/transact_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_message"
+                app:iconSize="40dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/more_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/msg_btn"
+                android:paddingStart="15dp"
+                android:onClick="moreBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/msg_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_other"
+                app:iconSize="40dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/home_bg"
+    tools:context=".transferFunds">
+
+
+    <TextView
+        android:id="@+id/transfer_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:padding="20sp"
+        android:text="TRANSFER MONEY"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/acc_btns"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transfer_header">
+
+
+            <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+
+            <LinearLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/dashboard_bg"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:padding="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/transact_header">
+
+
+                <TextView
+                    android:id="@+id/from_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="From*"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+
+                <Spinner
+                    android:id="@+id/from_acc_dropdown_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/from_textview"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="#DBDFEC"
+                    android:layout_marginBottom="10dp"
+                    android:popupBackground="#DBDFEC">
+
+                </Spinner>
+
+
+                <TextView
+                    android:id="@+id/to_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/from_acc_dropdown_menu"
+                    android:layout_marginBottom="2dp"
+                    android:text="To*"
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
+
+                <Spinner
+                    android:id="@+id/to_acc_dropdown_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/to_textview"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="#DBDFEC"
+                    android:layout_marginBottom="10dp"
+                    android:popupBackground="#DBDFEC">
+
+                </Spinner>
+
+
+                <TextView
+                    android:id="@+id/amount_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/to_acc_dropdown_menu"
+                    android:text="Enter amount*"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    />
+
+                <EditText
+                    android:id="@+id/amountInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:paddingStart="8dp"
+                    android:layout_below="@id/amount_textview"
+                    android:hint="amount"
+                    android:textColorHint="#5A5252"
+                    android:inputType="numberDecimal"
+                    android:textColor="#000000"
+                    android:layout_marginBottom="10dp"/>
+
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/transfer_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/amountInput"
+                    android:background="@drawable/acc_btns"
+                    android:text="TRANSFER"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#FFFFFF"/>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/done_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/transfer_btn"
+                    android:background="@drawable/acc_btns"
+                    android:onClick="homeBtn"
+                    android:text="Done"
+                    android:textColor="#FFFFFF"/>
+
+            </LinearLayout>
+
+
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <RelativeLayout
+        android:id="@+id/btnBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:focusable="true">
+
+
+
+             <Button
+                 android:id="@+id/home_btn"
+                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                 android:layout_width="75dp"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentStart="true"
+                 android:layout_marginStart="10dp"
+                 android:layout_marginTop="0dp"
+                 android:padding="15dp"
+                 android:onClick="homeBtn"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toStartOf="@id/cards_btn"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toTopOf="parent"
+                 app:icon="@drawable/icon_home"
+                 app:iconSize="40dp"
+                 app:iconTint="#000000"
+                 app:strokeColor="@color/white"
+                 app:strokeWidth="2dp"
+                 tools:ignore="RtlSymmetry" />
+
+            <Button
+                android:id="@+id/cards_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:paddingStart="15dp"
+                android:onClick="cardBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/transact_btn"
+                app:layout_constraintStart_toEndOf="@id/home_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_cards"
+                app:iconSize="40dp"
+                app:iconTint="#000000"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/transact_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/cards_btn"
+                android:paddingStart="13dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:fadingEdge="vertical"
+                android:onClick="transactBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/msg_btn"
+                app:layout_constraintStart_toEndOf="@id/cards_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_transact"
+                app:iconSize="55dp"
+                app:iconTint="#0033FF"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/msg_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/transact_btn"
+                android:paddingStart="15dp"
+                android:onClick="msgBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/more_btn"
+                app:layout_constraintStart_toEndOf="@id/transact_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_message"
+                app:iconSize="40dp"
+                app:iconTint="#000000"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/more_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/msg_btn"
+                android:paddingStart="15dp"
+                android:onClick="moreBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/msg_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_other"
+                app:iconSize="40dp"
+                app:iconTint="#000000"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

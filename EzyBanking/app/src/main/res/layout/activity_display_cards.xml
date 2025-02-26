@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg"
+    tools:context=".displayCards">
+
+
+    <TextView
+        android:id="@+id/cardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="VIRTUAL CARD"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:background="@drawable/message_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardHeader">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/home_bg"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="30sp"
+                        android:background="@drawable/dashboard_bg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/header">
+
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/card_theme"
+                            android:paddingTop="20dp">
+
+                            <GridLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/card_theme"
+                                android:columnCount="1"
+                                android:paddingBottom="20dp"
+                                android:rowCount="5"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="fill">
+
+
+                                    <TextView
+                                        android:id="@+id/cardAccNun"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@drawable/card_sections"
+                                        android:paddingStart="50dp"
+                                        android:paddingTop="20dp"
+                                        android:paddingBottom="5dp"
+                                        android:text="ACCOUNT NUMBER"
+                                        android:textColor="#FFFFFF" />
+
+
+                                </androidx.cardview.widget.CardView>
+
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="fill">
+
+
+                                    <TextView
+                                        android:id="@+id/accNum_digits"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/card_sections"
+                                        android:paddingStart="50dp"
+                                        android:paddingTop="2dp"
+                                        android:paddingBottom="20dp"
+                                        android:text="123456789"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="17sp"
+                                        android:textStyle="bold" />
+
+                                </androidx.cardview.widget.CardView>
+
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="fill">
+
+                                    <GridLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:columnCount="2">
+
+                                        <androidx.cardview.widget.CardView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_columnWeight="2">
+
+
+                                            <TextView
+                                                android:id="@+id/cardNum"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/card_sections"
+                                                android:paddingStart="50dp"
+                                                android:paddingTop="20dp"
+                                                android:paddingBottom="5dp"
+                                                android:text="CARD NUMBER"
+                                                android:textColor="#FFFFFF" />
+
+                                        </androidx.cardview.widget.CardView>
+
+                                        <androidx.cardview.widget.CardView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_rowWeight="1"
+                                            android:layout_columnWeight="1">
+
+                                            <TextView
+                                                android:id="@+id/uniqueNum"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:background="@drawable/card_sections"
+                                                android:gravity="center"
+                                                android:text="000"
+                                                android:textColor="#FFFFFF"
+                                                android:textSize="15sp"
+                                                android:textStyle="bold" />
+                                        </androidx.cardview.widget.CardView>
+
+
+                                    </GridLayout>
+
+
+                                </androidx.cardview.widget.CardView>
+
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="fill">
+
+                                    <GridLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:columnCount="2">
+
+
+                                        <androidx.cardview.widget.CardView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_columnWeight="2">
+
+
+                                            <TextView
+                                                android:id="@+id/cadNum_digits"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:background="@drawable/card_sections"
+                                                android:paddingStart="50dp"
+                                                android:paddingTop="2dp"
+                                                android:paddingBottom="20dp"
+                                                android:text="1234 5678 9012 3456"
+                                                android:textColor="#FFFFFF"
+                                                android:textSize="17sp"
+                                                android:textStyle="bold" />
+
+
+                                        </androidx.cardview.widget.CardView>
+
+
+                                        <androidx.cardview.widget.CardView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_rowWeight="1"
+                                            android:layout_columnWeight="1">
+
+                                            <GridLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:columnCount="1"
+                                                android:rowCount="2">
+
+
+                                                <androidx.cardview.widget.CardView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_rowWeight="1"
+                                                    android:layout_columnWeight="1">
+
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:background="@drawable/card_sections"
+                                                        android:gravity="center"
+                                                        android:text="EXP DATE"
+                                                        android:textColor="#FFFFFF"
+                                                        android:textSize="13sp"
+                                                        android:textStyle="normal" />
+
+                                                </androidx.cardview.widget.CardView>
+
+                                                <androidx.cardview.widget.CardView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_rowWeight="1"
+                                                    android:layout_columnWeight="1">
+
+                                                    <TextView
+                                                        android:id="@+id/expDate"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="match_parent"
+                                                        android:background="@drawable/card_sections"
+                                                        android:gravity="center"
+                                                        android:text="08/29"
+                                                        android:textColor="#FFFFFF"
+                                                        android:textSize="15sp"
+                                                        android:textStyle="bold" />
+
+                                                </androidx.cardview.widget.CardView>
+
+                                            </GridLayout>
+
+
+                                        </androidx.cardview.widget.CardView>
+
+
+                                    </GridLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="fill">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="#000000"
+                                        android:padding="10dp" />
+
+                                </androidx.cardview.widget.CardView>
+                            </GridLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <RelativeLayout
+        android:id="@+id/btnBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:focusable="true">
+
+
+
+             <Button
+                 android:id="@+id/home_btn"
+                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                 android:layout_width="75dp"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentStart="true"
+                 android:layout_marginStart="10dp"
+                 android:layout_marginTop="0dp"
+                 android:padding="15dp"
+                 android:onClick="homeBtn"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toStartOf="@id/cards_btn"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toTopOf="parent"
+                 app:icon="@drawable/icon_home"
+                 app:iconSize="40dp"
+                 app:iconTint="#000000"
+                 app:strokeColor="#FFFFFF"
+                 app:strokeWidth="2dp"
+                 tools:ignore="RtlSymmetry" />
+
+            <Button
+                android:id="@+id/cards_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:paddingStart="15dp"
+                android:onClick="cardBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/transact_btn"
+                app:layout_constraintStart_toEndOf="@id/home_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_cards"
+                app:iconSize="40dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#0033FF"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/transact_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/cards_btn"
+                android:paddingStart="15dp"
+                android:onClick="transactBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/msg_btn"
+                app:layout_constraintStart_toEndOf="@id/cards_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_transact"
+                app:iconSize="55dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/msg_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/transact_btn"
+                android:paddingStart="15dp"
+                android:onClick="msgBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/more_btn"
+                app:layout_constraintStart_toEndOf="@id/transact_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_message"
+                app:iconSize="40dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/more_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/msg_btn"
+                android:paddingStart="15dp"
+                android:onClick="moreBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/msg_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_other"
+                app:iconSize="40dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

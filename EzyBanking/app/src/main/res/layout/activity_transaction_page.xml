@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg"
+    tools:context=".transactionPage">
+
+
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Transact"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:background="@drawable/message_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/home_bg"
+                android:orientation="vertical"
+                >
+
+
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="30sp"
+                    android:paddingBottom="10dp"
+                    android:background="@drawable/dashboard_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/header">
+
+                    <TextView
+                        android:id="@+id/payTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Pay"
+                        android:textSize="17sp"
+                        android:textColor="#064774"
+                        android:paddingStart="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="8dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        tools:ignore="RtlSymmetry" />
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/pay_ben_tile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/acc_btns"
+                            android:layout_below="@id/payTitle"
+                            android:clickable="true"
+                            android:onClick="payBen"
+                            android:focusable="true"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:id="@+id/account_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Pay beneficial"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp"
+                                app:drawableStartCompat="@drawable/pay_ben"
+                                app:drawableTint="#FFFFFF"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/send_cash_tile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@id/pay_ben_tile"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/acc_btns"
+                            android:clickable="true"
+                            android:onClick="sendCash"
+                            android:focusable="true"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:id="@+id/savings_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Send cash"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp"
+                                android:drawablePadding="10dp"
+                                android:drawableTint="#FFFFFF"
+                                app:drawableStartCompat="@drawable/send_money"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/transfer_money_tile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@id/send_cash_tile"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/acc_btns"
+                            android:clickable="true"
+                            android:onClick="transferMoney"
+                            android:focusable="true"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/random_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Transfer money"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp"
+                                android:drawablePadding="10dp"
+                                app:drawableStartCompat="@drawable/icon_transfer_tile"
+                                app:drawableTint="#FFFFFF"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/pay_me_tile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@id/transfer_money_tile"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/acc_btns"
+                            android:clickable="true"
+                            android:onClick="payMe"
+                            android:focusable="true"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/pay_me_lable"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Pay me"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp"
+                                android:drawablePadding="10dp"
+                                app:drawableStartCompat="@drawable/pay_me"
+                                app:drawableTint="#FFFFFF"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </RelativeLayout>
+
+
+                <!--========================= Purchasing Section =============================-->
+                <RelativeLayout
+                    android:id="@+id/purchaseLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="30sp"
+                    android:paddingBottom="10dp"
+                    android:background="@drawable/dashboard_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/header">
+
+                    <TextView
+                        android:id="@+id/layoutTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Purchase"
+                        android:textSize="17sp"
+                        android:textColor="#064774"
+                        android:paddingStart="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="8dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        tools:ignore="RtlSymmetry" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/buy_electric_tile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_below="@id/layoutTitle"
+                            android:background="@drawable/acc_btns"
+                            android:clickable="true"
+                            android:onClick="buyElectric"
+                            android:focusable="true"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:id="@+id/electric_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Buy electricity"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp"
+                                android:drawablePadding="10dp"
+                                app:drawableStartCompat="@drawable/icon_electric"
+                                app:drawableTint="#FFFFFF"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/buy_prepaid_tile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@id/buy_electric_tile"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/acc_btns"
+                            android:clickable="true"
+                            android:onClick="buyPrepaid"
+                            android:focusable="true"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:id="@+id/prepaid_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Buy prepaid mobile"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:layout_marginStart="10dp"
+                                android:drawablePadding="10dp"
+                                app:drawableStartCompat="@drawable/icon_buyprepaid_tile"
+                                app:drawableTint="#FFFFFF"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/buy_voucher_tile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@id/buy_prepaid_tile"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/acc_btns"
+                            android:clickable="true"
+                            android:onClick="buyVoucher"
+                            android:focusable="true"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/vouvher_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Buy voucher"
+                                android:textColor="#FFFFFF"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp"
+                                android:drawablePadding="10dp"
+                                app:drawableStartCompat="@drawable/ticket_voucher"
+                                app:drawableTint="#FFFFFF"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
+    <!--============================== NAVBAR DESIGN ===========================-->
+
+    <RelativeLayout
+        android:id="@+id/btnBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:focusable="true">
+
+
+
+             <Button
+                 android:id="@+id/home_btn"
+                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                 android:layout_width="75dp"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentStart="true"
+                 android:layout_marginStart="10dp"
+                 android:layout_marginTop="0dp"
+                 android:padding="15dp"
+                 android:onClick="homeBtn"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toStartOf="@id/cards_btn"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toTopOf="parent"
+                 app:icon="@drawable/icon_home"
+                 app:iconSize="40dp"
+                 app:iconTint="#000000"
+                 app:strokeColor="#FFFFFF"
+                 app:strokeWidth="2dp"
+                 tools:ignore="RtlSymmetry" />
+
+            <Button
+                android:id="@+id/cards_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:paddingStart="15dp"
+                android:onClick="cardBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/transact_btn"
+                app:layout_constraintStart_toEndOf="@id/home_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_cards"
+                app:iconSize="40dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/transact_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/cards_btn"
+                android:paddingStart="15dp"
+                android:onClick="transactBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/msg_btn"
+                app:layout_constraintStart_toEndOf="@id/cards_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_transact"
+                app:iconSize="55dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#0033FF"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/msg_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/transact_btn"
+                android:paddingStart="15dp"
+                android:onClick="msgBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/more_btn"
+                app:layout_constraintStart_toEndOf="@id/transact_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_message"
+                app:iconSize="40dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/more_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/msg_btn"
+                android:paddingStart="15dp"
+                android:onClick="moreBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/msg_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_other"
+                app:iconSize="40dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

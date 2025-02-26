@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="from_acc_dropdown_menu">
+
+        <item>Select Account</item>
+        <item>Main Account</item>
+        <item>Savings Account</item>
+        <item>Random Account</item>
+
+    </string-array>
+
+    <string-array name="default_options">
+
+        <item>Select Account</item>
+        <item>Main Account</item>
+        <item>Savings Account</item>
+        <item>Random Account</item>
+
+    </string-array>
+
+
+    <string-array name="main_options">
+
+        <item>Savings Account</item>
+        <item>Random Account</item>
+
+    </string-array>
+
+
+    <string-array name="savings_options">
+
+        <item>Main Account</item>
+        <item>Random Account</item>
+
+    </string-array>
+    <string-array name="random_options" >
+
+        <item>Main Account</item>
+        <item>Savings Account</item>
+
+    </string-array>
+
+</resources>

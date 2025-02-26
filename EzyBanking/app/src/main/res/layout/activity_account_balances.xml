@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg"
+    tools:context=".accountBalances">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/account_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/acc_balances_theme">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:rowCount="3"
+                android:columnCount="1">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill"
+                    android:layout_marginBottom="10dp"
+                    android:background="#000000">
+
+                    <TextView
+                        android:id="@+id/acc_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Account"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        android:padding="1dp"
+                        android:background="@drawable/acc_balances_theme"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="BALANCE"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        android:paddingBottom="1dp"
+                        android:paddingTop="10dp"
+                        android:background="@drawable/acc_balances_theme"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill">
+
+                    <TextView
+                        android:id="@+id/acc_type_balance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="R0.00"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        android:paddingBottom="10dp"
+                        android:background="@drawable/acc_balances_theme"/>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!--=================== Option Bar ===============================-->
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="fill">
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:rowCount="1"
+                        android:columnCount="3">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1">
+
+                            <TextView
+                                android:id="@+id/all_transactions"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="All"
+                                android:textSize="15sp"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="sans-serif-medium"
+                                android:paddingTop="5dp"
+                                android:paddingStart="18dp"
+                                android:paddingEnd="18dp"
+                                android:background="@drawable/acc_balances_theme"
+                                android:clickable="true"
+                                android:onClick="hOption"
+                                android:defaultFocusHighlightEnabled="true"
+                                app:drawableBottomCompat="@drawable/history_options_theme" />
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1">
+
+                            <TextView
+                                android:id="@+id/money_in_history"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Money In"
+                                android:textSize="15sp"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="sans-serif-medium"
+                                android:paddingTop="5dp"
+                                android:clickable="true"
+                                android:onClick="hOption"
+                                android:background="@drawable/acc_balances_theme"/>
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1">
+
+                            <TextView
+                                android:id="@+id/money_out_history"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Money Out"
+                                android:textSize="15sp"
+                                android:textColor="#FFFFFF"
+                                android:fontFamily="sans-serif-medium"
+                                android:clickable="true"
+                                android:onClick="hOption"
+                                android:paddingTop="5dp"
+                                android:background="@drawable/acc_balances_theme"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </GridLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </GridLayout>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/account_history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/account_info">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!--============================== NAVBAR DESIGN ===========================-->
+
+    <RelativeLayout
+        android:id="@+id/btnBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:focusable="true">
+
+
+
+             <Button
+                 android:id="@+id/home_btn"
+                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                 android:layout_width="75dp"
+                 android:layout_height="wrap_content"
+                 android:layout_alignParentStart="true"
+                 android:layout_marginStart="10dp"
+                 android:layout_marginTop="0dp"
+                 android:padding="15dp"
+                 android:onClick="homeBtn"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintEnd_toStartOf="@id/cards_btn"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toTopOf="parent"
+                 app:icon="@drawable/icon_home"
+                 app:iconSize="40dp"
+                 app:iconTint="#0033FF"
+                 app:strokeColor="#FFFFFF"
+                 app:strokeWidth="2dp"
+                 tools:ignore="RtlSymmetry" />
+
+            <Button
+                android:id="@+id/cards_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:paddingStart="15dp"
+                android:onClick="cardBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/transact_btn"
+                app:layout_constraintStart_toEndOf="@id/home_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_cards"
+                app:iconSize="40dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/transact_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/cards_btn"
+                android:paddingStart="15dp"
+                android:onClick="transactBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/msg_btn"
+                app:layout_constraintStart_toEndOf="@id/cards_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_transact"
+                app:iconSize="55dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/msg_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/transact_btn"
+                android:paddingStart="15dp"
+                android:onClick="msgBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/more_btn"
+                app:layout_constraintStart_toEndOf="@id/transact_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_message"
+                app:iconSize="40dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+            <Button
+                android:id="@+id/more_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/msg_btn"
+                android:paddingStart="15dp"
+                android:onClick="moreBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/msg_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:icon="@drawable/icon_other"
+                app:iconSize="40dp"
+                app:strokeColor="#FFFFFF"
+                app:iconTint="#000000"
+                app:strokeWidth="2dp"
+                tools:ignore="RtlSymmetry" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
